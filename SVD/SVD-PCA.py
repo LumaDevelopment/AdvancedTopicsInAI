@@ -41,11 +41,7 @@ def expand_singular_values_array(S: np.ndarray, M: int, N: int):
 
 # ---------- DEFINE MATRIX HERE ----------
 
-matrix = np.array([[1, 2, 3, 4, 5],
-                   [6, 7, 8, 9, 10],
-                   [11, 12, 13, 14, 15],
-                   [16, 17, 18, 19, 20],
-                   [21, 22, 23, 24, 25]])
+matrix = np.random.rand(5, 5)
 
 # ---------- Business Logic ----------
 
@@ -91,12 +87,20 @@ S_squared = S**2
 explained_variance = S_squared / np.sum(S_squared)
 print(f"~Explained Variance by Each Component~\n{explained_variance}\n")
 
-# Graph explained variance to educate the user's choice
-# of number of components for PCA
-x_coords = [i for i in range(len(explained_variance))]
+# Graph singular values and explained variance to
+# educate the user's choice of number of components
+# for PCA
+
+x_coords = [i for i in range(len(S))]
+
 plt.plot(x_coords, explained_variance)
 plt.xlabel("Component Index")
-plt.ylabel("Explained Variance")
+plt.title("Explained Variance")
+plt.show()
+
+plt.plot(x_coords, S)
+plt.xlabel("Singular Value Index")
+plt.title("Singular Values")
 plt.show()
 
 # Get number of components from user
