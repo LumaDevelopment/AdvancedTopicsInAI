@@ -1,5 +1,6 @@
 # AdvancedTopicsInAI
 Materials for Advanced Topics in Artificial Intelligence (CSE 5800) with Dr. Mitra at the Florida Institute of Technology.
+You can find my report summarizing the course's content [here](Report.md).
 
 Topics:
 
